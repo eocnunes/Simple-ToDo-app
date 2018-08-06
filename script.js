@@ -5,17 +5,34 @@ const classNames = {
   TODO_DELETE: 'todo-delete',
 }
 
-const list = document.getElementById('todo-list');
-const itemCountSpan = document.getElementById('item-count');
-const uncheckedCountSpan = document.getElementById('unchecked-count');
+const list = document.querySelector('.todo-list');
+const itemCountSpan = document.querySelector('.item-count');
+const uncheckedCountSpan = document.querySelector('.unchecked-count');
 
 function newTodo() {
-  alert("New TODO button clicked!");
   let item = document.createElement('li');
-  item.setAttribute('class', 'todo-container');
-  let node = document.createTextNode("test");
+  item.setAttribute('class', classNames.TODO_ITEM);
+
+  let check = document.createElement("INPUT");
+  check.setAttribute('type', 'checkbox');
+  check.setAttribute('class', classNames.TODO_CHECKBOX);
+  // check.onclick = function () {
+  //   itemCount = Number(itemCountSpan.innerHTML);
+  //   itemCount--;
+  //   itemCountSpan.innerHTML = String(itemCount);
+  // }
+  item.appendChild(check);
+
+  let node = document.createTextNode(prompt("Enter a new task:"));
   item.appendChild(node);
 
-  let element = document.querySelector('.todo-list');
-  element.appendChild(item);
+  let del = document.createElement("INPUT");
+  del.setAttribute('type', 'button');
+  del.setAttribute('class', classNames.TODO_DELETE);
+  del.onclick = function () { list.removeChild(item); }
+  item.appendChild(del);
+
+  list.appendChild(item);
+
+  
 }
