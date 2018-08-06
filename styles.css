@@ -3,7 +3,7 @@
 }
 
 html, body {
-  background-color: #eee;
+  background-color: #FFCB25;
   margin: 0;
   padding: 8px;
 }
@@ -12,6 +12,10 @@ ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+li {
+  border-top:4px solid transparent;
 }
 
 .center {
@@ -31,6 +35,7 @@ ul {
   flex-direction: column;
   background-color: white;
   height: 95vh;
+  border-radius: 10px;
 }
 
 .title, .controls, .button {
@@ -50,22 +55,24 @@ ul {
 }
 
 .todo-delete {
-  background-color: #f44336;
+  background-color: #e24a4a;
   border-radius: 3px;
   float: right;
   margin: 6px;
 }
 
 .todo-checkbox {
-  margin: 10px;
+  margin: 10px 15px;
 }
 
 .todo-container {
-  background-color: #e8ebef;
+  background-color: #dee4ed;
   padding: 20px;
   border-radius: 5px;
-  border: 1px solid #333;
+  border: 1px solid #000;
   margin: 0px 0px 3px 0px;
+  color: black;
+  font-size: 20px;
 }
 
 .todo-container:first-of-type {
